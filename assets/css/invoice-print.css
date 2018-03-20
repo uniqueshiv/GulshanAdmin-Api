@@ -1,0 +1,149 @@
+#sidebar, .header, .site-footer{
+    display: none ;
+}
+
+.panel-heading {
+ display: none !important;
+}
+.panel-body{
+height: 100%; 
+width:100%;
+padding: 0px !important; 
+
+}
+/* .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+        border-left: 1px solid black;
+}*/
+thead{
+ background: #bdbcbc;
+/*border-bottom: 1px solid black;*/
+}
+.invoiceline{
+    margin: 0px 5px;
+    padding: 15px;
+    background: #bdbcbc !important;
+}
+.invoiceline{
+    
+    padding: 15px !important;
+    background: #bdbcbc;
+}
+.invoice-btn{
+        margin-top: 10px;
+}
+.border-right{
+	border-right:1px solid black;
+}
+.border-left{
+	border-left:1px solid black;
+}
+.border-bottom{
+	border-bottom: 1px solid black;
+}
+.border-top{
+	border-top: 1px solid black;
+}
+.table>thead>tr>th{
+	border-bottom: 1px solid black !important;;
+}
+/*ul.amounts li{
+     margin-bottom:0px; 
+     padding: 0px; 
+}*/
+/*.table {
+    border: 1px solid black;
+    border-bottom: none;
+   
+}*/
+.panel-body{
+  border: 1px solid black;
+}
+/*.tbltop{
+  border-bottom:1px solid black;
+}*/
+h1{
+  color:black;
+}
+/*table.table{
+   margin-bottom: 0px !important;
+}*/
+
+
+.customerclass{
+width:50px !important;
+}
+.nonpritablediv{
+display: none !important;
+}
+
+.printtable{
+display: block !important;
+}
+.signspace{
+  padding-right: 30px;
+  display: block !important;
+}
+.sign{
+  padding-top:60px;
+}
+.signspace td{
+  padding: 10px;
+}
+
+.tableji{
+margin-left:20px;
+margin-right:20px;
+}
+.marginleft{
+  width: 1000px !important;
+}
+
+.signcls{
+  width: 800px !important;
+}
+.toptd1{
+	padding: 20px;
+	border-right: 1px solid black; 
+}
+.toptd2{
+	padding: 20px;
+	
+}
+.toptd3{
+	text-align: right;
+	padding: 20px;
+	}
+.top2td{
+	padding:20px;	
+}
+.trtop{
+	border-bottom: 1px solid black;
+}
+.top21{
+	border-right: 1px solid black;
+}
+p{
+	margin: 0 !important;
+}
+
+
+
+.invoice-btn{
+display: none !important;
+}
+.header , .site-footer .panel-heading .invoice-btn{
+    min-height: 0 !important;
+}
+
+#main-content {
+    margin-left: 0;
+    width: 100%;
+   /* margin-top:-50px;*/
+}
+
+@page{
+size: A4;
+
+}
+
+
