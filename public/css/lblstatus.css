@@ -1,0 +1,49 @@
+.label {
+    padding: 0.5em 0.8em;
+}
+
+.label-default {
+    background-color: #a1a1a1 !important;;
+}
+
+.label-primary {
+    background-color: #59ace2 !important;;
+}
+
+.label-success {
+    background-color: #A9D86E !important;;
+}
+
+.label-info {
+    background-color: #8175c7 !important;;
+}
+
+.label-warning {
+    background-color: #FCB322 !important;;
+}
+
+.label-danger {
+    background-color: #FF6C60 !important;
+}
+
+.label-inverse {
+    background-color: #344860 !important;
+}
+
+/*text color*/
+
+.text-danger {
+    color: #FF6C60 !important;
+}
+
+.text-muted {
+    color: #a1a1a1 !important;
+}
+
+.text-primary {
+    color: #59ace2 !important;
+}
+
+.label-new {
+    background-color: #32A797;
+   }

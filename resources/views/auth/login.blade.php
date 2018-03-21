@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
 
                     <form class="form-signin" role="form" method="POST" action="{{ url('/login') }}">

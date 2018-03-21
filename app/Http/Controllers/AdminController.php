@@ -7,6 +7,7 @@ use Auth;
 class AdminController extends Controller
 {
    public function __construct(){
+    // dd('ss');
      $this->middleware('auth:admin');
    }
    public function index(){
@@ -14,9 +15,7 @@ class AdminController extends Controller
       if($name){
         return view('home');
       }
-      // }else{
-      //   return view('auth.login');
-      // }
+
    }
 
 

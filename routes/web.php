@@ -1,5 +1,6 @@
 <?php
 use Prophecy\Doubler\Generator\ClassCreator;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,15 @@ Route::get('/home', 'AdminController@index')->name('home');
 Route::post('/login','Auth\AdminLoginController@login')->name('login');
 
 
+// Route::get('/login',function(){
+//   if(isset(Auth::user()->name)){
+//      return Auth::user()->email;
+//      //return redirect('home');
+//   }else{
+//     return view('auth.login');
+//   }
+// });
+
 //old
 
 Route::post('apply/upload', 'ApplyController@upload');
@@ -29,13 +39,13 @@ Route::resource('notifications', 'NotificationController');
 Route::get('/dashboard', 'UserController@form');
 Route::get('/events',function(){
         $events = App\Notification::orderBy('id', 'desc')
-         ->where('catagory', 'events')
+         ->where('category', 'events')
         ->get();
          return response()->json(['events'=>$events],200);
 });
 Route::get('/news',function(){
         $news = App\Notification::orderBy('id', 'desc')
-         ->where('catagory', 'news')
+         ->where('category', 'news')
         ->get();
          return response()->json(['news'=>$news],200);
 });
@@ -54,7 +64,7 @@ Route::get('/xml',function () {
   // return response($content)->header('Content-Type', 'text/xml');
 });
 //Route::auth();
-
+Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::post('/sendMessage', 'NotificationController@sendMessage');
 Route::get('destroynotification/{id}', 'NotificationController@destroynotification');

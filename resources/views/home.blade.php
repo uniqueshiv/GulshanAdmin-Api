@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+    {{ Auth::user()->email }}
               <section class="panel">
                   <header class="panel-heading">
                       All Users
@@ -19,11 +19,11 @@
                                   <ul class="dropdown-menu pull-right">
                                       <li><a href="#">Print</a></li>
                                       <li><a href="#">Save as PDF</a></li>
-                                      
+
                                   </ul>
                               </div>
                           </div>
-                          
+
 
                           <div class="table-responsive">
 

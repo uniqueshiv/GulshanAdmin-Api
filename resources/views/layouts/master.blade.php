@@ -56,7 +56,6 @@
 
                                 {{ Auth::user()->name }}
 
-
                    </span>
                           <b class="caret"></b>
                       </a>

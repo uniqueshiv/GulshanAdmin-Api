@@ -49,12 +49,18 @@ class UserController extends Controller
       if(!(Auth::guest()))
       {
 
-        $usr=DB::table('users')->get();
+        // $usr=DB::table('users')->get();
+        // $rol=DB::table('roles')->get();
+        //
+        // $userRoles=DB::table('users')->join('role_user', 'users.id', '=', 'role_user.user_id')
+        // ->join('roles', 'role_user.role_id', '=', 'roles.id')->select('users.*', 'roles.display_name', 'role_user.*')->get();
+        //
+
+        $usr=DB::table('admins')->get();
         $rol=DB::table('roles')->get();
 
-        $userRoles=DB::table('users')->join('role_user', 'users.id', '=', 'role_user.user_id')
-        ->join('roles', 'role_user.role_id', '=', 'roles.id')->select('users.*', 'roles.display_name', 'role_user.*')->get();
-
+        $userRoles=DB::table('admins')->join('role_user', 'admins.id', '=', 'role_user.user_id')
+        ->join('roles', 'role_user.role_id', '=', 'roles.id')->select('admins.*', 'roles.display_name', 'role_user.*')->get();
 
         return view('Users.Admin.dashboard')->with('data',$rol)->with('usrdata',$usr)->with('usrrol',$userRoles);
        }
@@ -95,18 +101,9 @@ class UserController extends Controller
 
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'address'=>'required|max:255',
-            'cin'=>'required|max:255',
-            'gst'=>'required|max:255',
-            'mobile'=>'required|min:6|numeric',
-            'commissionerate'=>'required',
-            'pannumber'=>'max:200',
+            'username' => 'required|max:255|unique:users',
             'password' => 'required|min:6',
-            'beneficiaryswift'=>'max:200',
-            'beneficiarynum'=>'required|numeric',
-            'beneficiary_name'=>'required|max:220',
-            'beneficiaryifsc'=>'required|max:10',
-            'bankname'=>'required|max:200',
+
         ]);
     }
 
@@ -114,20 +111,10 @@ class UserController extends Controller
     {
         $uuid4 = Uuid::uuid4();
         $user= User::create([
-            'userid'=> $uuid4->toString(),
+            //'userid'=> $uuid4->toString(),
             'name' => $data['name'],
+            'username'=>$data['username'],
             'email' => $data['email'],
-            'address'=>$data['address'],
-            'cin'=>$data['cin'],
-            'gst'=>$data['gst'],
-            'mobile'=>$data['mobile'],
-            'pannumber'=>$data['pannumber'],
-            'commissionerate'=>$data['commissionerate'],
-            'beneficiaryswift' =>$data['beneficiaryswift'],
-            'beneficiarynum' =>$data['beneficiarynum'],
-            'beneficiary_name' =>$data['beneficiary_name'],
-            'beneficiaryifsc' =>strtoupper($data['beneficiaryifsc']),
-            'bankname' => $data['bankname'],
             'password' => bcrypt($data['password']),
         ]);
 
